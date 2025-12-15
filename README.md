@@ -37,7 +37,6 @@ WITH ranked_customers AS (
         ) AS rn
     FROM customers_raw
 ),
-
 phone_cleaned AS (
     SELECT
         customer_id,
@@ -55,7 +54,6 @@ phone_cleaned AS (
     FROM ranked_customers
     WHERE rn = 1
 )
-
 SELECT
     customer_id,
     email,
@@ -76,11 +74,11 @@ SELECT
 
 FROM phone_cleaned
 
-
 6. Fix <null>s & Country Issues
 ○ Standardize country_code values using country_dim.
 ○ Handle variations such as usa, UnitedStates, IND, SINGAPORE.
 ○ If created_at is <null>, replace with a default timestamp (1900-01-01).
+
 WITH standardized_country AS (
     SELECT
         c.customer_id,
