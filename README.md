@@ -19,6 +19,7 @@ Write SQL query/queries for the following tasks - Written SQL queries for creati
 ○ Standardize phone numbers into a 10-digit format, or mark as "Unknown" if invalid or
 missing.
 
+
 WITH ranked_customers AS (
     SELECT
         customer_id,
